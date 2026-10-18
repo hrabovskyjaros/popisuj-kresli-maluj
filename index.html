@@ -306,7 +306,7 @@
     if (state.free) {
       $("turnNamePick").textContent = "";
       $("roundTurn").textContent = "";
-      $("okBtn").textContent = "Další pojem";
+      $("okBtn").textContent = "Uhodnuto";
       return;
     }
     $("okBtn").textContent = "Uhodnuto";
@@ -383,7 +383,8 @@
 
   $("okBtn").addEventListener("click", function () {
     if (state.free) {
-      setWord();
+      stopTimer();
+      showOnly("pickView");
       return;
     }
     state.scores[state.turn] += 1;
